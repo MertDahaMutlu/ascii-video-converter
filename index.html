@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ASCII Converter</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Drag & Drop tam ortalama için ekleme */
+    #dropZone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 2px dashed #888;
+      border-radius: 12px;
+      height: 150px;
+      margin: 20px 0;
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    #controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    #widthSlider {
+      width: 200px;
+    }
+
+    footer {
+      text-align: center;
+      opacity: 0.5;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ASCII Converter</h1>
+  </header>
+
+  <main>
+    <div id="dropZone">Drag &amp; Drop a video or image file here</div>
+
+    <div id="controls">
+      <button id="toggleColorBtn">Toggle Color ASCII</button>
+
+      <label class="slider-label">ASCII Width: <span id="widthValue">100</span></label>
+      <input type="range" id="widthSlider" min="100" max="200" value="100">
+
+      <button id="captureFrameBtn">Capture Frame (TXT)</button>
+      <button id="downloadAsciiVideoBtn">Download ASCII Video</button>
+    </div>
+
+    <div id="container">
+      <div id="asciiContainer">
+        <canvas id="renderCanvas" aria-hidden="false"></canvas>
+      </div>
+
+      <div id="mediaContainer">
+        <video id="video" controls></video>
+        <img id="image" alt="Dropped image preview" />
+      </div>
+    </div>
+  </main>
+
+  <canvas id="frameCanvas" style="display:none;"></canvas>
+
+  <footer>
+    <p class="footer-text">Made by <a href="https://github.com/MertDahaMutlu" target="_blank" rel="noopener">Mert Mutlu</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
